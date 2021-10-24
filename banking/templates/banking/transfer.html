@@ -1,0 +1,88 @@
+{% extends 'banking/basic.html' %}
+{% load static %}
+{% block title %}Money Transfer{% endblock %}
+{% block css %}
+
+body{
+  background-color:#E6E8FA;
+}
+
+
+img{
+  padding-top:70px;
+height:65%;
+}
+
+h1{
+  color:rgb(47, 47, 79);
+  font-weight:bold;
+}
+
+form{
+  padding-top:25%;
+
+}
+label{
+  color:rgb(66, 66, 111);
+  font-weight:bold;
+}
+
+form-group{
+  margin:10px;
+}
+
+{% endblock %}
+{% block body %}
+
+
+
+
+<div class="container">
+
+<div class="row">
+
+  <div class="col-md-6">
+<img src="{% static 'images/moneyTransfer.png' %}" alt="">
+  </div>
+
+  <div class="col-md-6">
+
+    <form method="POST" action="/transfer/" class="form1"> {% csrf_token %}
+
+        <h1>Let's Transfer Money</h1>
+             <div class="form-group">
+                <label for="exampleInputEmail1">Sender's Email</label>
+                      <select name="Sender1" class="form-control">
+                        {% for i in email_list %}
+                      <option>{{i.email}}</option>
+                      {% endfor %}
+                    </select>
+             </div>
+
+
+              <div class="form-group">
+                  <label for="exampleInputEmail1">Receiver's Email</label>
+                        <select name="Receiver1" class="form-control">
+                          {% for i in email_list %}
+                        <option>{{i.email}}</option>
+                        {% endfor %}
+                      </select>
+              </div>
+
+              <div class="form-group">
+                  <label for="exampleInputEmail1">Amount</label>
+                      <input class="form-control" name="amount1" type="number" placeholder="Enter Transferable Amount">
+              </div>
+
+                <br>
+
+              <button type="submit" class="btn btn-primary">Transfer Money</button>
+    </form>
+
+  </div>
+
+</div>
+
+</div>
+
+{% endblock %}

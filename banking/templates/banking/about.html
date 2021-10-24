@@ -1,0 +1,63 @@
+{% extends 'banking/basic.html' %}
+{%load static%}
+
+{% block title %}About Us{% endblock %}
+
+
+{% block css %}
+
+.back-img{
+  background-image:url({%static 'images/cover.jpg'%});
+  width:100%;
+  height:600px;
+  background-size:cover;
+  position:absolute;
+}
+.text{
+  padding-top:30px;
+}
+h1{
+font-family:  'Garamond', serif;
+font-size:100px;
+font-weight:bold;
+color:rgb(20, 92, 37);
+}
+#h2{
+  color:gray;
+}
+
+#a{
+ width:45%;
+font-weight:bold;
+color:black;
+font-family:  'Garamond', serif;
+font-size:16px;
+}
+span{
+  font-size:24px;
+  color:black;
+  font-family:  'Garamond', serif;
+}
+
+
+{% endblock %}
+
+
+{% block body %}
+<div class="back-img">
+<div class="text container">
+<div class="row">
+    <h1 id="h1">ABOUT</h1>
+    <h1 id="h2">IN<span> Deepu Bank was founded on 7th September, 2006</span></h1>
+    <p id="a"> By a group of eminent businessmen from India. The Bank was under private ownership and control till July 2021 when it was nationalised along with 13 other banks.
+
+Beginning with one office in Andhra Pradesh, with a paid-up capital of Rs.50 lakh and 50 employees, the Bank has made a rapid growth over the years and blossomed into a mighty institution with a strong national presence and sizable international operations. In business volume, the Bank occupies a premier position among the nationalised banks.
+
+The Bank has over 5000 branches in India spread over all states/ union territories including specialized branches.
+ These branches are controlled through 59 Zonal Offices and 10 NBG Offices.</p>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

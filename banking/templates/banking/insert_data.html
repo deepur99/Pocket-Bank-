@@ -1,0 +1,88 @@
+{% extends 'banking/basic.html' %}
+{% load static %}
+{% block title %}Registration{% endblock %}
+{% block css %}
+
+ img{
+   padding-top:50px;
+  width:90%;
+}
+.container{
+  margin-top:45px;
+}
+body{
+  background-color:#E6E8FA;
+   font-family:  'Garamond', serif;
+}
+h1{
+  color:rgb(47, 47, 79);
+  font-weight:bold;
+}
+form{
+  width:70%;
+  padding:35px;
+  border-color: white;
+  border-width: 8px;
+  border-style: double;
+}
+.form-group{
+  padding-top:10px;
+}
+label{
+  font-weight:bold;
+  padding-bottom:5px;
+  color:rgb(66, 66, 111);
+}
+
+
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+<div class="row">
+
+
+<div class="col-sm-6">
+
+          <form id="f" method="post" action="/insert_data/">{% csrf_token %}
+            <h1><b>Register Here!</b></h1>
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address:</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="amount">Account Opening Amount:</label>
+              <input type="number" class="form-control" id="balance" name="balance" placeholder="Enter Balance Amount">
+            </div>
+
+            <div class="form-group">
+              <label for="bankid">Bank Id:</label>
+              <input type="number" class="form-control" id="bank_id" name="bank_id" placeholder="Enter Unique Bank Id">
+            </div>
+
+                  <br>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+</div>
+
+
+
+        <div class="col-sm-6">
+        <img src="{%static 'images/registration.svg'%}" alt="">
+        </div>
+
+
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'banking/basic.html' %}
+{% load static %}
+{% block title %}Transaction History{% endblock %}
+{% block css %}
+
+table, th, td {
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align:center;
+}
+th{
+  color:#85e085;
+
+}
+td{
+  color:black;
+}
+
+td:hover{
+  color:white;
+  background-color:black;
+
+}
+
+
+h1{
+  padding-top:12px;
+   font-family:  'Garamond', serif;
+   color:#ff8c66;
+}
+
+
+body{
+  background: white;
+
+}
+
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+<div class="row">
+
+<div class="col-md-6">
+  <img src="{% static 'images/transactionhistory.jpg' %}" alt="" align="right" width="600" height="600">
+
+</div>
+
+<div class="col-md-6">
+<h1>Transaction Details</h1>
+  <table style="width:110%">
+    <tr>
+      <th>ID</th>
+      <th>Sender's Email</th>
+      <th>Receiver's Email</th>
+      <th>Amount(Rs.)</th>
+    </tr>
+    {% for data in history %}
+    <tr>
+      <td>{{data.id}}</td>
+      <td>{{data.sender}}</td>
+      <td>{{data.receiver}}</td>
+      <td>{{data.amt}}</td>
+    </tr>
+    {% endfor %}
+
+  </table>
+</div>
+
+</div>
+</div>
+
+{% endblock %}
