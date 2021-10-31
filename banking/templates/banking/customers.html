@@ -1,0 +1,49 @@
+{% extends 'banking/basic.html' %}
+{% load static %}
+{% block title %}Account Details{% endblock %}
+{% block css %}
+
+body{
+  background-image:url({%static 'images/4.jpg'%});
+  background-color:white;
+  font-family:  'Garamond', serif;
+}
+
+img{
+  padding-top:10%;
+  width:50%;
+}
+
+h1{
+  padding-top:12px;
+   color:navy;
+}
+
+{% endblock %}
+{% block body %}
+
+
+
+<div class="container">
+
+<div class="row">
+
+<div class="col-md-6">
+  <h1>Account Details</h1>
+<br>
+  <p><b> Bank ID</b>: {{1.bank_id}} SBI-HD01</p>
+  <p><b>Name</b>: {{1.name}} Deepu</p>
+  <p><b>Email</b>: {{1.email}}Deepumail343@gmail.com</p>
+  <p><b>Remaining Balance</b>: {{1.balance}} 25,746</p>
+</div>
+                        
+<div class="col-md-6">
+  <img src="{% static 'images/customers.svg' %}" alt="">
+</div>
+
+</div>
+
+</div>
+
+
+{% endblock %}

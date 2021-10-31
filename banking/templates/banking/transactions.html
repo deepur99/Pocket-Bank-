@@ -1,0 +1,130 @@
+{% extends 'banking/basic.html' %}
+{% load static %}
+{% block title %}Transaction History{% endblock %}
+{% block css %}
+
+* { 
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box; 
+}  
+
+table {
+  border-collapse: separate;
+  background:#fff;
+  @include border-radius(5px);
+  margin:50px auto;
+  @include box-shadow(0px 0px 5px rgba(0,0,0,0.3));
+}
+
+thead {
+  @include border-radius(5px);
+}
+
+thead th {
+  font-family: 'Patua One', cursive;
+  font-size:16px;
+  font-weight:400;
+  color:#fff;
+  @include text-shadow(1px 1px 0px rgba(0,0,0,0.5));
+  text-align:left;
+  padding:20px;
+  @include background-image(linear-gradient(#646f7f, #4a5564));
+  border-top:1px solid #858d99;
+  
+  &:first-child {
+   @include border-top-left-radius(5px); 
+  }
+
+  &:last-child {
+    @include border-top-right-radius(5px); 
+  }
+}
+
+
+tbody tr td {
+  font-family: 'Open Sans', sans-serif;
+  font-weight:400;
+  color:#5f6062;
+  font-size:13px;
+  padding:20px 20px 20px 20px;
+  border-bottom:1px solid #e0e0e0;
+  
+}
+
+tbody tr:nth-child(2n) {
+  background:#f0f3f5;
+}
+
+tbody tr:last-child td {
+  border-bottom:none;
+  &:first-child {
+    @include border-bottom-left-radius(5px);
+  }
+  &:last-child {
+    @include border-bottom-right-radius(5px);
+  }
+}
+
+tbody:hover > tr td {
+  @include opacity(0.5);
+  
+  /* uncomment for blur effect */
+  /* color:transparent;
+  @include text-shadow(0px 0px 2px rgba(0,0,0,0.8));*/
+}
+
+tbody:hover > tr:hover td {
+  @include text-shadow(none);
+  color:#2d2d2d;
+  @include opacity(1.0);
+}
+
+h1{
+  padding-top:12px;
+   font-family:  'Garamond', serif;
+   color:#ff8c66;
+}
+
+
+body{
+  background: white;
+
+}
+
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+<div class="row">
+
+<div class="col-md-6">
+  <img src="{% static 'images/transactionhistory.jpg' %}" alt="" align="right" width="600" height="600">
+
+</div>
+
+<div class="col-md-6">
+<h1>Transaction Details</h1>
+  <table>
+    <tr>
+      <th>Sender's Email</th>
+      <th>Receiver's Email</th>
+      <th>Amount(Rs.)</th>
+    </tr>
+    {% for data in history %}
+    <tr>
+      <td>{{data.sender}}</td>
+      <td>{{data.receiver}}</td>
+      <td>{{data.amt}}</td>
+    </tr>
+    {% endfor %}
+
+  </table>
+</div>
+
+</div>
+</div>
+
+{% endblock %}
