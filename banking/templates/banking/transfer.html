@@ -9,7 +9,7 @@ body{
 
 
 img{
-  padding-top:70px;
+  padding-top:50px;
 height:65%;
 }
 
@@ -19,7 +19,7 @@ h1{
 }
 
 form{
-  padding-top:25%;
+  padding-top:15%;
 
 }
 label{
@@ -41,32 +41,22 @@ form-group{
 
 <div class="row">
 
-  <div class="col-md-6">
+  <div class="col-sm-6 col-xs-12">
 <img src="{% static 'images/moneyTransfer.png' %}" alt="">
   </div>
 
-  <div class="col-md-6">
+  <div class="col-sm-6 col-xs-12">
 
     <form method="POST" action="/transfer/" class="form1"> {% csrf_token %}
 
         <h1>Let's Transfer Money</h1>
              <div class="form-group">
                 <label for="exampleInputEmail1">Sender's Email</label>
-                      <select name="Sender1" class="form-control">
-                        {% for i in email_list %}
-                      <option>{{i.email}}</option>
-                      {% endfor %}
-                    </select>
+                    <input type="text" class="form-control" name="Sender1" placeholder="Account user email">
              </div>
-
-
               <div class="form-group">
                   <label for="exampleInputEmail1">Receiver's Email</label>
-                        <select name="Receiver1" class="form-control">
-                          {% for i in email_list %}
-                        <option>{{i.email}}</option>
-                        {% endfor %}
-                      </select>
+                      <input type="text" class="form-control" name="Receiver1" placeholder="Receiver user email">
               </div>
 
               <div class="form-group">

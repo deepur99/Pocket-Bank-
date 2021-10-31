@@ -3,10 +3,7 @@
 {% block title %}Registration{% endblock %}
 {% block css %}
 
- img{
-   padding-top:50px;
-  width:90%;
-}
+ 
 .container{
   margin-top:45px;
 }
@@ -35,6 +32,7 @@ label{
 }
 
 
+
 {% endblock %}
 
 {% block body %}
@@ -43,44 +41,51 @@ label{
 <div class="container">
 <div class="row">
 
+<form method="post" action="/insert_data/">{% csrf_token %}
+  <h1><b>Create Bank Account </b></h1>
+<div class="col-sm-6 col-xs-12" style="float:left; width: 45% ; padding-left: 30px ;">
 
-<div class="col-sm-6">
+  <div class="form-group">
+    <label for="name">Account Holder Name:</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+  </div>
 
-          <form id="f" method="post" action="/insert_data/">{% csrf_token %}
-            <h1><b>Register Here!</b></h1>
-            <div class="form-group">
-              <label for="name">Name:</label>
-              <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
-            </div>
+  <div class="form-group">
+    <label for="emailid">Email Address:</label>
+    <input type="email" class="form-control" id="email_id" name="email_id" placeholder="name@example.com">
+  </div>
 
-            <div class="form-group">
-              <label for="email">Email Address:</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
-            </div>
+  <div class="form-group">
+    <label for="mobileno">Mobile Number</label>
+    <input type="number" class="form-control" id="mobile_no" name="mobile_no" placeholder="Enter Mobile Number">
+  </div>
 
-            <div class="form-group">
-              <label for="amount">Account Opening Amount:</label>
-              <input type="number" class="form-control" id="balance" name="balance" placeholder="Enter Balance Amount">
-            </div>
+  <div class="form-group">
+    <label for="amount">Account Opening Amount:</label>
+    <input type="number" class="form-control" id="balance" name="balance" placeholder="Enter Balance Amount">
+  </div>
 
-            <div class="form-group">
-              <label for="bankid">Bank Id:</label>
-              <input type="number" class="form-control" id="bank_id" name="bank_id" placeholder="Enter Unique Bank Id">
-            </div>
-
-                  <br>
-
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-
+  <br>
+  <button type="submit" class="btn btn-success">Submit</button>
 </div>
+<div class="col-sm-6 col-xs-12" style="float:right; width: 45%; padding-right: 30px ;">
+  <div class="form-group">
+    <label for="address">Account Holder Address:</label>
+    <input type="text" class="form-control" id="address" name="address" placeholder="Enter your Address">
+  </div>
 
+  <div class="form-group">
+    <label for="bankid">Pan Card Number</label>
+    <input type="text" class="form-control" id="bank_id" name="bank_id" placeholder="Enter Pan Card Number">
+  </div>
 
-
-        <div class="col-sm-6">
-        <img src="{%static 'images/registration.svg'%}" alt="">
-        </div>
-
+  <div class="form-group">
+    <label for="email">Prefered UPI:</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+  </div>
+ 
+</form> 
+</div>
 
 </div>
 </div>

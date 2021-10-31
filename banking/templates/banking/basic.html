@@ -3,6 +3,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,10 +105,14 @@ footer{
          <div class="logo" style="color: burlywood;" ><i class="fa fa-bank" style="font-size:36px"></i> Deepu Bank</div>
       <ul>
         <li><a href="{%url 'home'%}">Home</a></li>
-        <li><a href="{%url 'about'%}">About</a></li>
-        <li><a href="{%url 'transactions'%}">Transactions</a></li>
-        <li><a href="{%url 'customers'%}">Customers</a></li>
-        <li><a href="{%url 'contacts'%}">Contact Us</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="{%url 'customers'%}">Account Details</a></li>
+          <li><a href="{%url 'transactions'%}">Transactions</a></li>
+          <li><a href="{%url 'about'%}">About</a></li>
+          <!-- <li><a href="{%url 'contacts'%}">Contact Us</a></li> -->
+          <li><a href="{% url 'logout' %}" style=" background-color: #fd5e14; border-radius: 50px;">Log out</a></li>
+          {% else %}
+          {% endif %}
       </ul>
    </nav>
 <br><br><br><br>
