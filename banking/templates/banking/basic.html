@@ -108,10 +108,10 @@ footer{
           {% if user.is_authenticated %}
           <li><a href="{%url 'customers'%}">Account Details</a></li>
           <li><a href="{%url 'transactions'%}">Transactions</a></li>
-          <li><a href="{%url 'about'%}">About</a></li>
           <!-- <li><a href="{%url 'contacts'%}">Contact Us</a></li> -->
           <li><a href="{% url 'logout' %}" style=" background-color: #fd5e14; border-radius: 50px;">Log out</a></li>
           {% else %}
+          <li><a href="{%url 'about'%}">About</a></li>
           {% endif %}
       </ul>
    </nav>

@@ -1,11 +1,157 @@
 
 {% extends 'banking/base.html' %}
 {% load crispy_forms_tags %}
+{% block css %}
 
+h1{
+  animation:type 4s steps(37);
+  overflow:hidden;
+  white-space:nowrap;
+  font-family:  'Garamond', serif;
+  border-right:4px solid red;
+  width:100%;
+}
+
+@keyframes type{
+  0%{
+    width:0ch;
+  }
+  100%{
+    width:30ch;
+  }
+}
+h2{color:rgb(230, 49, 21);
+ font-family:  'Garamond', serif;
+}
+p{
+  font-family:  'Garamond', serif;
+}
+#button{
+  background-color:rgb(104, 131, 139);
+  color:white;
+  border-radius:5px;
+  border-color:white;
+  margin:20px;
+  width:200px;
+  margin-left:10px;
+
+}
+#button:hover{
+  background-color:rgb(101, 144, 154);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+header, main {
+  margin: 1rem 0;
+}
+
+main *+* {
+  margin-top: 1rem;
+}
+
+/* Styling the Disclosure Widgets */
+
+details > summary {
+  background-color: #fdb;
+  cursor: pointer;
+  padding: .5rem 1rem;
+}
+
+details > summary > * {
+  display: inline;
+}
+
+details > div {
+  border: 2px solid #fdb;
+  margin-top: 0;
+  padding: 1rem;
+}
+details[open] summary ~ * {
+  animation: sweep .5s ease-in-out;
+}
+@keyframes sweep {
+  0%    {opacity: 0; margin-top: -10px}
+  100%  {opacity: 1; margin-top: 0px}
+}
+
+summary {
+  cursor: pointer;
+}
+
+summary > * {
+  display: inline;
+}
+
+{% endblock %}
 
 {% block content %}
+
     <div class="container">
         <h1>You have been Logged out</h1>
-        <h5><a href="{% url 'login' %}">Login In Again</a></h5>
+        <a href="{% url 'login' %}" id="button" class="btn btn-primary"><i class="fa fa-user" aria-hidden="true"></i> &nbsp  Login In Again</a>  
+
+         <h3><u>FAQ's</u></h3>
+    <section class="container">
+        <div class="one">
+            <details>
+            <summary>Should I have more than one bank account?</summary>
+            <div class="body">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse aut nam assumenda veniam sequi quas aliquid consectetur fugit accusantium, dignissimos vero quod adipisci beatae cumque repudiandae numquam ratione saepe tempore!</p>
+            </div>
+            </details>
+        </div>
+        <hr>
+        <div class="two">
+            <details>
+                <summary>Which savings account is right for me?</summary>
+            <div class="body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellat excepturi reiciendis, exercitationem quaerat quidem nostrum nisi. Tempore veniam, sint deleniti harum illo fuga itaque recusandae nobis repellat molestias exercitationem?</p>
+            </div>
+            </details>
+        </div>
+        <hr>
+        <div class="three">
+            <details>
+                <summary>Do I need a personal loan?</summary>
+            <div class="body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellat excepturi reiciendis, exercitationem quaerat quidem nostrum nisi. Tempore veniam, sint deleniti harum illo fuga itaque recusandae nobis repellat molestias exercitationem?</p>
+            </div>
+            </details>
+        </div>
+        <hr>
+        <div class="four">
+            <details>
+                <summary>When should I apply for a mortgage?</summary>
+            <div class="body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellat excepturi reiciendis, exercitationem quaerat quidem nostrum nisi. Tempore veniam, sint deleniti harum illo fuga itaque recusandae nobis repellat molestias exercitationem?</p>
+            </div>
+            </details>
+        </div>
+        <hr>
+        <div class="five">
+            <details>
+                <summary>What are some helpful tips to manage my credit score?</summary>
+            <div class="body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellat excepturi reiciendis, exercitationem quaerat quidem nostrum nisi. Tempore veniam, sint deleniti harum illo fuga itaque recusandae nobis repellat molestias exercitationem?</p>
+            </div>
+            </details>
+        </div>
+        <hr>
+        <div class="six">
+            <details>
+                <summary>How can I improve my business's cash flow?</summary>
+            <div class="body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus repellat excepturi reiciendis, exercitationem quaerat quidem nostrum nisi. Tempore veniam, sint deleniti harum illo fuga itaque recusandae nobis repellat molestias exercitationem?</p>
+            </div>
+            </details>
+        </div>
+    </section>
     </div>
 {% endblock %}</title>
