@@ -124,8 +124,6 @@ margin-top: 100px;
             </div>
             <form class="d-flex" id="authstyle">
               {% if user.is_authenticated %}
-                <a href="{% url 'profile' %}" class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Profile </a>
-                <a href="{% url 'logout' %}" class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Logout </a>
               {% else %}
                 <a href="{% url 'register' %}" class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Create Account </a>
                 <a href="{% url 'login' %}" class="btn" style="color: white; background-color: #fd5e14; margin-left: 10px; "type="submit" id="header-links">Log In</a>
@@ -153,14 +151,6 @@ margin-top: 100px;
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
       <!-- Option 2: Separate Popper and Bootstrap JS -->
-      <!--
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-      -->
-      <!-- <footer>
-        <p id="pfoot" class="pfot" style="color: black; font-size: 20px; font-weight: 600;">
-        <i class="fa fa-cc-mastercard"></i>|<i class="  fa fa-cc-paypal"></i>|<i class="  fa fa-cc-visa"></i>|<i class="  fa fa-paypal"></i>|<i class="fa fa-google-wallet"></i>|<i class=" fa fa-credit-card"></i>|<i class="  fa fa-cc-amex"></i>|<i class="  fa fa-cc-stripe"></i><p style="font-size: 18px;">CopyRightsReserved 2021-2022|Designed By Deepu@org</p>
-      </p>
-      </footer> -->
+      
   </body>
 </html>
