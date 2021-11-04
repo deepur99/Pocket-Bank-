@@ -1,0 +1,69 @@
+{% extends 'banking/basic.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block css %}
+
+ #faq {
+            background-color: #87A8A4;
+            padding: 0%;
+            color: black;
+            font-size: 120%;
+            padding-bottom: 5%;
+        }
+
+@keyframes type{
+  0%{
+    width:0ch;
+  }
+  100%{
+    width:30ch;
+  }
+}
+h3{color:rgb(230, 49, 21);
+ font-family:  'Garamond', serif;
+ font-size: 55px;
+  padding-top: 2%;
+}
+p{
+  font-family:  'Garamond', serif;
+}
+
+
+{% endblock %}
+
+
+
+{% block body %}
+
+    <div class="container-fluid" id="faq">
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <img src="{% static 'images/faq22.png' %}" style="width: 100%; height: auto;">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h3 style="text-align: center; color: white;">Frequently asked questions</h3>
+                <br>
+                 <div style="text-align: center; border-bottom: 3px solid black; ">
+                    </div>
+                <br>
+                <h4>Why E - Wallet ?</h4>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur.</li>
+                    <li>Lorem ipsum dolor sit amet.</li>
+                    <li>Lorem ipsum dolor sit.</li>
+                </ul>
+                <br>
+                <h4>How to get started ?</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore eveniet id architecto eius accusamus voluptatibus soluta delectus provident!    
+                </p>
+            </div>
+            
+        </div>
+        
+    </div>
+{% endblock %}

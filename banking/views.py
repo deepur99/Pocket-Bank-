@@ -20,6 +20,9 @@ def about(request):
 def contacts(request):
     return render(request,'banking/contacts.html')
 
+def faq(request):
+    return render(request,'banking/faq.html')
+
 def customers(request):
     customers_instance = Balance.objects.all()
     return render(request,'banking/customers.html',{'stu':customers_instance})
@@ -35,7 +38,7 @@ def insert_data(request):
             bank_id = request.POST.get('bank_id')
             address = request.POST.get('address')
             balance = request.POST.get('balance')
-        
+
             balance_query=Balance.objects.filter(email=email)
             if balance_query:
                 return HttpResponse("Given email id Already exists")
@@ -48,16 +51,16 @@ def insert_data(request):
                 balance_instance.address=address
                 balance_instance.balance=balance
                 balance_instance.bank_id=bank_id
-           
+
                 balance_instance.save()
             return render(request,'banking/home.html')
 
-        else: 
-            return render(request,'banking/insert_data.html') 
-            
+        else:
+            return render(request,'banking/insert_data.html')
+
     except Exception as ex:
-        print(ex)      
-    
+        print(ex)
+
 
 def register(request):
     if request.method == "POST":
