@@ -91,6 +91,18 @@ footer{
              background-color: rgb(95, 159, 159);
              color: white;
             }
+.column {
+  float: left;
+
+}
+
+.left {
+  width: 90%;
+}
+
+.right {
+  width: 10%;
+}
 
 
             {% block css %}{% endblock %}
@@ -119,9 +131,17 @@ footer{
 
 {% block body %}{% endblock %}
 <footer>
-  <p id="pfoot" class="pfot" style="color: black; font-size: 20px; font-weight: 600;">
-  <i class="fa fa-cc-mastercard"></i>|<i class="  fa fa-cc-paypal"></i>|<i class="  fa fa-cc-visa"></i>|<i class="  fa fa-paypal"></i>|<i class="fa fa-google-wallet"></i>|<i class=" fa fa-credit-card"></i>|<i class="  fa fa-cc-amex"></i>|<i class="  fa fa-cc-stripe"></i><p style="font-size: 18px;">CopyRightsReserved 2021-2022|Designed By Deepu@org</p>
-</p>
+  <div class="row">
+    <div class="column left">
+      <p id="pfoot" class="pfot" style="color: black; font-size: 20px; font-weight: 600;">
+        <i class="fa fa-cc-mastercard"></i>|<i class="  fa fa-cc-paypal"></i>|<i class="  fa fa-cc-visa"></i>|<i class="  fa fa-paypal"></i>|<i class="fa fa-google-wallet"></i>|<i class=" fa fa-credit-card"></i>|<i class="  fa fa-cc-amex"></i>|<i class="  fa fa-cc-stripe"></i><p style="font-size: 18px;">CopyRightsReserved 2021-2022|Designed By Deepu@org</p>
+      </p>
+    </div>
+    <div class="column right">
+      
+    <img src="{% static 'images/chatbox-icon.svg' %}" alt=""  >
+    </div>
+  </div>
 </footer>
 
 
