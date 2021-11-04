@@ -20,6 +20,9 @@ def about(request):
 def contacts(request):
     return render(request,'banking/contacts.html')
 
+def faq(request):
+    return render(request,'banking/faq.html')
+
 def customers(request):
     customers_instance = Balance.objects.all()
     return render(request,'banking/customers.html',{'stu':customers_instance})
